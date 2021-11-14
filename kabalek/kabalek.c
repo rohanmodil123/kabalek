@@ -128,14 +128,16 @@ void on_message_create(struct discord *client,
    if (0 == strcmp(msg->content, "kabalek")) {
      struct discord_create_message_params params = { .content = send_phrase() };
      discord_create_message(client, msg->channel_id, &params, NULL);
+     log_info("Sent-Phrase using Kabalek");
    }
 
    // if message contains "wrong", send Amateur Hour
    if (strstr(msg->content, "wrong") != NULL) {
      struct discord_create_message_params params = { .content = "Amateur Hour! Amateur Hour!" };
      discord_create_message(client, msg->channel_id, &params, NULL);
+     log_info("Sent-AH using Wrong");
    }
-
+   
    // if message contains "Kabalek", chance to send send_phrase
    if ((strstr(msg->content, "kalebek") != NULL)||(strstr(msg->content, "Kalebek") != NULL)
       ||(strstr(msg->content, "KALEBEK") != NULL)||(strstr(msg->content, "kalabek") != NULL)||(strstr(msg->content, "Kalabek") != NULL)
@@ -144,6 +146,7 @@ void on_message_create(struct discord *client,
      if(rand() % 6 == 1){
        struct discord_create_message_params params = { .content = send_phrase() };
        discord_create_message(client, msg->channel_id, &params, NULL);
+       log_info("Sent-Phrase using KalEbek");
      }
 
 
