@@ -137,7 +137,9 @@ void on_message_create(struct discord *client,
    }
 
    // if message contains "Kabalek", chance to send send_phrase
-   if (strstr(msg->content, "kalabek") != NULL) {
+   if ((strstr(msg->content, "kalebek") != NULL)||(strstr(msg->content, "Kalebek") != NULL)
+      ||(strstr(msg->content, "KALEBEK") != NULL)||(strstr(msg->content, "kalabek") != NULL)||(strstr(msg->content, "Kalabek") != NULL)
+         ||(strstr(msg->content, "KALABEK") != NULL)) {
 
      if(rand() % 6 == 1){
        struct discord_create_message_params params = { .content = send_phrase() };
