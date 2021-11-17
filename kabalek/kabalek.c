@@ -137,8 +137,8 @@ void on_message_create(struct discord *client,
      discord_create_message(client, msg->channel_id, &params, NULL);
      log_info("Sent-AH using Wrong");
    }
-   
-   // if message contains "Kabalek", chance to send send_phrase
+
+   // if message contains "Kabalek", chance to send send_phrase.
    if ((strstr(msg->content, "kalebek") != NULL)||(strstr(msg->content, "Kalebek") != NULL)
       ||(strstr(msg->content, "KALEBEK") != NULL)||(strstr(msg->content, "kalabek") != NULL)||(strstr(msg->content, "Kalabek") != NULL)
          ||(strstr(msg->content, "KALABEK") != NULL)) {
